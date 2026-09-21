@@ -1,0 +1,207 @@
+/* ==========================================================================
+   1. Base & Reset Styles
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #111827; /* Passed WAVE contrast requirements */
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #064e3b; /* Deep green */
+    color: #ffffff;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   2. Skip to Main Content Link (Position + :focus Required)
+   ========================================================================== */
+.skip-link {
+    position: absolute;
+    top: -60px; /* Off-screen by default */
+    left: 10px;
+    background-color: #111827;
+    color: #ffffff;
+    padding: 12px 20px;
+    z-index: 1000;
+    font-weight: bold;
+    text-decoration: underline;
+    border-radius: 0 0 6px 6px;
+    transition: top 0.25s ease-in-out;
+}
+
+/* Visible ONLY when in focus via keyboard tab */
+.skip-link:focus {
+    top: 0;
+}
+
+/* ==========================================================================
+   3. Accessible Flexbox Navigation Styling
+   ========================================================================== */
+nav {
+    background-color: #047857; /* Mid-tone green */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Flex applied to parent container */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: underline; /* High accessibility compliance */
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Pseudo-Class Requirement on Navigation */
+.nav-links a:hover {
+    background-color: #ecfdf5;
+    color: #064e3b;
+}
+
+/* ==========================================================================
+   4. Main Content Layout
+   ========================================================================== */
+main {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+section, article {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #064e3b;
+    margin-top: 0;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   5. Box Model Styling for Images
+   ========================================================================== */
+/* Styled using border, padding, and border-radius */
+figure {
+    margin: 0;
+    background-color: #f9fafb;
+    border: 2px solid #d1d5db;     /* Border requirement */
+    padding: 12px;                   /* Padding requirement */
+    border-radius: 12px;             /* Border-radius requirement */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Pseudo-Class Requirement on Image Card */
+figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+figcaption {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #1f2937;
+}
+
+/* ==========================================================================
+   6. Advanced Selector: nth-child Implementation
+   ========================================================================== */
+/* Alternates border-radius on every second figure element */
+figure:nth-child(even) {
+    border-radius: 24px 4px 24px 4px;
+    border-color: #059669;
+}
+
+/* ==========================================================================
+   7. CSS Flexbox Layout Section
+   ========================================================================== */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-container h2 {
+    width: 100%;
+}
+
+.flex-container figure {
+    flex: 1 1 280px;
+    max-width: 340px;
+}
+
+/* ==========================================================================
+   8. CSS Grid Layout Section
+   ========================================================================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+}
+
+.grid-container h2 {
+    grid-column: 1 / -1; /* Heading spans full grid width */
+}
+
+/* ==========================================================================
+   9. Footer
+   ========================================================================== */
+footer {
+    background-color: #064e3b;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
